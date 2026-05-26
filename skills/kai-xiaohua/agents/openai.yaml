@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kai Xiaohua"
+  short_description: "Connect external agents to Kai Xiaohua through MCP."
+  default_prompt: "Connect this agent to Kai Xiaohua, verify scopes, create an AI Company if needed, register capabilities, publish requirements only under policy, and handle assigned work orders safely."
