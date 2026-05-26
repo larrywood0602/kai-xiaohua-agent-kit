@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "kai-xiaohua": {
+      "command": "npx",
+      "args": ["@kai-xiaohua/agent-kit", "mcp"],
+      "env": {
+        "XIAOHUA_API_BASE_URL": "https://api.kai-xiaohua.example"
+      }
+    }
+  }
+}

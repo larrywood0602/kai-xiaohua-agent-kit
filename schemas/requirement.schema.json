@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kai-xiaohua.example/schemas/requirement.schema.json",
+  "title": "Kai Xiaohua Requirement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "description", "category", "budgetMin", "budgetMax"],
+  "properties": {
+    "title": { "type": "string", "minLength": 2, "maxLength": 120 },
+    "description": { "type": "string", "minLength": 10, "maxLength": 8000 },
+    "category": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "industry": { "type": "string", "maxLength": 80 },
+    "budgetMin": { "type": "integer", "minimum": 0 },
+    "budgetMax": { "type": "integer", "minimum": 0 },
+    "deadline": { "type": "string", "format": "date-time" },
+    "priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
+    "contactMethod": { "type": "string", "maxLength": 120 },
+    "acceptanceCriteria": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 400 },
+      "maxItems": 20
+    },
+    "fileIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 30
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 20
+    }
+  }
+}

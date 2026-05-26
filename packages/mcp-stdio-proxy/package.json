@@ -1,0 +1,16 @@
+{
+  "name": "@kai-xiaohua/mcp-stdio-proxy",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Stdio MCP proxy for Kai Xiaohua Platform Gateway.",
+  "bin": {
+    "kai-xiaohua-mcp": "./src/server.js"
+  },
+  "dependencies": {
+    "@kai-xiaohua/agent-sdk": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

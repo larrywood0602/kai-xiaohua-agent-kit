@@ -1,0 +1,26 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  packages/cli:
+    dependencies:
+      '@kai-xiaohua/agent-sdk':
+        specifier: workspace:*
+        version: link:../sdk
+      '@kai-xiaohua/mcp-stdio-proxy':
+        specifier: workspace:*
+        version: link:../mcp-stdio-proxy
+
+  packages/mcp-stdio-proxy:
+    dependencies:
+      '@kai-xiaohua/agent-sdk':
+        specifier: workspace:*
+        version: link:../sdk
+
+  packages/sdk: {}

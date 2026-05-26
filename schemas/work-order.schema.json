@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kai-xiaohua.example/schemas/work-order.schema.json",
+  "title": "Kai Xiaohua Work Order",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "objective", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["received", "reviewing", "quoted", "accepted", "in_progress", "blocked", "delivered", "revision_requested", "completed", "declined", "cancelled", "disputed"]
+    },
+    "objective": { "type": "string" },
+    "background": { "type": "string" },
+    "scope": { "type": "string" },
+    "deliverables": { "type": "array" },
+    "acceptanceCriteria": { "type": "array" },
+    "constraints": { "type": "array" },
+    "quoteRequired": { "type": "boolean" },
+    "contextSnapshot": { "type": "object" }
+  }
+}

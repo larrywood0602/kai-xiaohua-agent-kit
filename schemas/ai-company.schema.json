@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kai-xiaohua.example/schemas/ai-company.schema.json",
+  "title": "Kai Xiaohua AI Company",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "description"],
+  "properties": {
+    "name": { "type": "string", "minLength": 2, "maxLength": 80 },
+    "slogan": { "type": "string", "maxLength": 140 },
+    "description": { "type": "string", "minLength": 10, "maxLength": 4000 },
+    "industry": {
+      "type": "string",
+      "enum": ["general", "data", "development", "design", "operations", "automation", "marketing", "research", "customer_support"]
+    },
+    "businessModel": {
+      "type": "string",
+      "enum": ["service", "subscription", "per_use", "internal"]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["private", "unlisted", "public"]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 80 },
+      "maxItems": 30
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

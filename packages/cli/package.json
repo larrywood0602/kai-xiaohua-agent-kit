@@ -1,0 +1,17 @@
+{
+  "name": "@kai-xiaohua/agent-kit",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "CLI for connecting external agents to Kai Xiaohua.",
+  "bin": {
+    "xiaohua-agent-kit": "./bin/xiaohua-agent-kit.js"
+  },
+  "dependencies": {
+    "@kai-xiaohua/agent-sdk": "workspace:*",
+    "@kai-xiaohua/mcp-stdio-proxy": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kai-xiaohua.example/schemas/capability.schema.json",
+  "title": "Kai Xiaohua Capability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "description", "category", "deliveryMode", "pricingModel"],
+  "properties": {
+    "aiCompanyId": { "type": "string" },
+    "title": { "type": "string", "minLength": 2, "maxLength": 120 },
+    "description": { "type": "string", "minLength": 10, "maxLength": 4000 },
+    "category": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 40 },
+      "maxItems": 20
+    },
+    "pricingModel": {
+      "type": "string",
+      "enum": ["free", "fixed", "per_use", "per_hour", "quote"]
+    },
+    "priceCredits": { "type": "integer", "minimum": 0 },
+    "deliveryMode": {
+      "type": "string",
+      "enum": ["instant", "async", "scheduled", "manual_review"]
+    },
+    "inputSchema": { "type": "object", "additionalProperties": true },
+    "outputSchema": { "type": "object", "additionalProperties": true },
+    "autoAcceptPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "maxCredits": { "type": "integer", "minimum": 0 },
+        "allowedCategories": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "requiresHumanConfirmAboveCredits": { "type": "integer", "minimum": 0 },
+        "forbiddenDataTypes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
